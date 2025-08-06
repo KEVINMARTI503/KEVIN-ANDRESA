@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Tareas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Tareas📝</h1>
+        <input type="text" id="nombreTarea" placeholder="Nombre de la tarea">
+        <input type="text" id="descripcionTarea" placeholder="Descripción">
+        <input type="date" id="fechaVencimiento" placeholder="Fecha de vencimiento">
+        <select id="estadoTarea">
+            <option value="pendiente">Pendiente</option>
+            <option value="en_progreso">En Progreso</option>
+            <option value="completada">Completada</option>
+        </select>
+        <button onclick="agregarTarea()">Agregar Tarea</button>
+        <table>
+            <thead>
+                <tr><th>Tarea</th><th>Descripción</th><th>Fecha de Vencimiento</th><th>Estado</th><th>Acciones</th></tr>
+            </thead>
+            <tbody id="tablaTareas"></tbody>
+        </table>
+    </div>
+    <script src="tareas.js"></script>
+</body>
+</html>
+
+

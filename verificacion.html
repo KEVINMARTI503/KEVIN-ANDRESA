@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificación</title>
+</head>
+<body>
+    <h2>Verificación en dos pasos</h2>
+    <p>Revise su correo y escriba el código:</p>
+    <input type="text" id="codigo" placeholder="Código de verificación">
+    <button onclick="verificar()">Verificar</button>
+
+    <script>
+        function verificar() {
+            const codigo = document.getElementById("codigo").value;
+            const guardado = localStorage.getItem("codigo_verificacion");
+
+            if (codigo === guardado) {
+                localStorage.setItem("autenticado", "true");
+                alert("Verificación exitosa.");
+                window.location.href = "tareas.html";
+            } else {
+                alert("Código incorrecto.");
+            }
+        }
+    </script>
+</body>
+</html>
