@@ -6,17 +6,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    //Contenedor principal del módulo de tareas, aqui el usuario puede registrar las nuevas tareas y visualizar todas las taeras guardadas
     <div class="container">
         <h1>Gestión de Tareas📝</h1>
+
+        //Este campo es para ingresar el nombre de la tarea
         <input type="text" id="nombreTarea" placeholder="Nombre de la tarea">
+        //Este campo es para ingresar una descripción en la tarea
         <input type="text" id="descripcionTarea" placeholder="Descripción">
+        //Este campo es para ingresar una fecha de vencimiento a la tarea
         <input type="date" id="fechaVencimiento" placeholder="Fecha de vencimiento">
+        //Esta es la lista de estados para la tarea
         <select id="estadoTarea">
             <option value="pendiente">Pendiente</option>
             <option value="en_progreso">En Progreso</option>
             <option value="completada">Completada</option>
         </select>
+        //Este es el botón que ejecuta la función de registrar una nueva tarea
         <button onclick="agregarTarea()">Agregar Tarea</button>
+        //Aqui esta la tabla donde se mostraran dinamicamente las tareas que se registró
         <table>
             <thead>
                 <tr><th>Tarea</th><th>Descripción</th><th>Fecha de Vencimiento</th><th>Estado</th><th>Acciones</th></tr>
@@ -24,6 +33,7 @@
             <tbody id="tablaTareas"></tbody>
         </table>
     </div>
+    //Archivo JavaScrpit que se encarga de la lógica del sistema
     <script src="tareas.js"></script>
 </body>
 </html>
