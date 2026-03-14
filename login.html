@@ -20,19 +20,26 @@
       <a href="#">¿Olvidaste tu contraseña?</a>
     </div>
 
+    //Este es el botón que ejecuta la orden de inicio de sesión
     <button onclick="login()">INGRESAR</button>
 
     <p class="registro">¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
   </div>
 
   <script>
+
+    //Aquí se validan las credenciales ingresadas por el usuario, comparando el correo y la contraseña ingresados en el almacenamiento
+    //Si son correctos, generará un código de verificación de dos pasos y lo redirige a la verificación, en este caso de prueba.
     function login() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
       const stored = JSON.parse(localStorage.getItem("usuario"));
 
+      //Verifica si el usuario  existe y las credenciales coinciden
       if (stored && stored.email === email && stored.password === password) {
         const codigo = Math.floor(100000 + Math.random() * 900000);
+        
+        //Guarda el código de verificación en el localstorage
         localStorage.setItem("codigo_verificacion", codigo);
         alert("Código de verificación enviado (simulado): " + codigo);
         window.location.href = "verificacion.html";
