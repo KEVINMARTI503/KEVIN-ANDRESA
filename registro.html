@@ -16,12 +16,15 @@
     <label for="password">Contraseña</label>
     <input type="password" id="password" placeholder="********">
 
+    //Este es el botón encargado de registrar a un nuevo usuario
     <button onclick="registrar()">REGISTRARSE</button>
 
     <p class="registro">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
   </div>
 
   <script>
+    //Aquí es donde se registra al nuevo usuario en el sistema tomando el correo y la contraseña ingresados valiando ambos campos
+    //tengan información y los almacena en el localStorage
     function registrar() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
