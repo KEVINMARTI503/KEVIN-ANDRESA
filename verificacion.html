@@ -11,6 +11,8 @@
     <button onclick="verificar()">Verificar</button>
 
     <script>
+        //Verifica el código de autenticación ingresado en el cuadro de texto por el usuario
+        //Se compara el código ingresado con el código que esta almacenado en localStorage, si coinciden se autoriza el acceso y redirige
         function verificar() {
             const codigo = document.getElementById("codigo").value;
             const guardado = localStorage.getItem("codigo_verificacion");
